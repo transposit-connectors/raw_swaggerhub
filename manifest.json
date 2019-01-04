@@ -1,7 +1,17 @@
 {
   "v2": {
-    "transposit": {
-      "javascriptAPIVersion": "3"
-    }
+    "swagger": {
+      "auth": {
+        "type": "HEADER",
+        "params": {
+          "header": {
+             "string": "Authorization"
+          }
+        }
+      },
+      "source": "swaggerhub.yml",
+      "url": "https://api.swaggerhub.com"
+    },
+    "description": "Swaggerhub"
   }
 }
