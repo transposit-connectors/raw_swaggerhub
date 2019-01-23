@@ -1,6 +1,12 @@
 swagger: '2.0'
 info:
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
   description: >
+    ## NOTE: this API definition differs from the original definition released by Swaggerhub at https://app.swaggerhub.com/apis/swagger-hub/registry-api/1.0.46.
+     * Operation names were changed to snake case to conform to Transposit's style guide.
+    
     # Introduction
 
     This is the registry API for SwaggerHub. It allows you to access, manage,
@@ -38,7 +44,7 @@ paths:
         Retrieves a list of currently defined APIs and Domains in APIs.json
         format
       description: ''
-      operationId: searchApisAndDomains
+      operationId: search_apis_and_domains
       parameters:
         - name: specType
           in: query
@@ -98,7 +104,7 @@ paths:
         - APIs
       summary: Retrieves a list of currently defined APIs in APIs.json format.
       description: ''
-      operationId: searchApis
+      operationId: search_apis
       parameters:
         - $ref: '#/parameters/query'
         - $ref: '#/parameters/state'
@@ -128,7 +134,7 @@ paths:
         - APIs
       summary: Retrieves an APIs.json listing of all APIs defined for this owner
       description: ''
-      operationId: getOwnerApis
+      operationId: get_owner_apis
       parameters:
         - $ref: '#/parameters/apiOwner'
         - $ref: '#/parameters/page'
@@ -149,7 +155,7 @@ paths:
       summary: >-
         Retrieves an APIs.json listing for all API versions for this owner and
         API
-      operationId: getApiVersions
+      operationId: get_api_versions
       parameters:
         - $ref: '#/parameters/apiOwner'
         - $ref: '#/parameters/api'
@@ -168,7 +174,7 @@ paths:
         Saves the provided Swagger definition; the owner must match the token
         owner. The version will be extracted from the Swagger definition
         itself.
-      operationId: saveDefinition
+      operationId: save_definition
       consumes:
         - application/json
         - application/yaml
@@ -219,7 +225,7 @@ paths:
         - APIs
       summary: Deletes the specified API
       description: ''
-      operationId: deleteApi
+      operationId: delete_api
       parameters:
         - $ref: '#/parameters/apiOwner'
         - $ref: '#/parameters/api'
@@ -239,7 +245,7 @@ paths:
       tags:
         - APIs
       summary: Gets API's collaboration
-      operationId: getCollaboration
+      operationId: get_collaboration
       parameters:
         - $ref: '#/parameters/apiOwner'
         - $ref: '#/parameters/api'
@@ -259,7 +265,7 @@ paths:
       tags:
         - APIs
       summary: Updates API's collaboration
-      operationId: updateCollaboration
+      operationId: update_collaboration
       parameters:
         - $ref: '#/parameters/apiOwner'
         - $ref: '#/parameters/api'
@@ -277,7 +283,7 @@ paths:
       tags:
         - APIs
       summary: Deletes API's collaboration
-      operationId: deleteCollaboration
+      operationId: delete_collaboration
       parameters:
         - $ref: '#/parameters/apiOwner'
         - $ref: '#/parameters/api'
@@ -292,7 +298,7 @@ paths:
         - APIs
       summary: Retrieves the Swagger definition for the specified API and version
       description: ''
-      operationId: getDefinition
+      operationId: get_definition
       produces:
         - application/json
         - application/yaml
@@ -315,7 +321,7 @@ paths:
         - APIs
       summary: Deletes a particular version of the specified API
       description: ''
-      operationId: deleteApiVersion
+      operationId: delete_api_version
       parameters:
         - $ref: '#/parameters/apiOwner'
         - $ref: '#/parameters/api'
@@ -341,7 +347,7 @@ paths:
         Retrieves the Swagger definition for the specified API and version in
         JSON format
       description: ''
-      operationId: getJsonDefinition
+      operationId: get_json_definition
       parameters:
         - $ref: '#/parameters/apiOwner'
         - $ref: '#/parameters/api'
@@ -364,7 +370,7 @@ paths:
         Retrieves the Swagger definition for the specified API and version in
         YAML format
       description: ''
-      operationId: getYamlDefinition
+      operationId: get_yaml_definition
       produces:
         - application/yaml
       parameters:
@@ -386,7 +392,7 @@ paths:
       tags:
         - APIs
       summary: Returns comments for the specified API version
-      operationId: getApiComments
+      operationId: get_api_comments
       description: >
         Returns all the comments and replies added by collaborators in the
         specified API version.
@@ -416,7 +422,7 @@ paths:
       tags:
         - Domains
       summary: Retrieves a list of currently defined domains in APIs.json format
-      operationId: searchDomains
+      operationId: search_domains
       parameters:
         - $ref: '#/parameters/query'
         - $ref: '#/parameters/state'
@@ -445,7 +451,7 @@ paths:
       tags:
         - Domains
       summary: Retrieves an APIs.json listing of all domains defined for this owner
-      operationId: getOwnerDomains
+      operationId: get_owner_domains
       parameters:
         - $ref: '#/parameters/domainOwner'
         - $ref: '#/parameters/page'
@@ -466,7 +472,7 @@ paths:
       summary: >-
         Retrieves an APIs.json listing for all domain versions for this owner
         and domain
-      operationId: getDomainVersions
+      operationId: get_domain_versions
       parameters:
         - $ref: '#/parameters/domainOwner'
         - $ref: '#/parameters/domain'
@@ -481,7 +487,7 @@ paths:
       tags:
         - Domains
       summary: Saves the provided Swagger definition of a domain
-      operationId: saveDomainDefinition
+      operationId: save_domain_definition
       consumes:
         - application/json
         - application/yaml
@@ -529,7 +535,7 @@ paths:
       tags:
         - Domains
       summary: Deletes the specified domain
-      operationId: deleteDomain
+      operationId: delete_domain
       parameters:
         - $ref: '#/parameters/domainOwner'
         - $ref: '#/parameters/domain'
@@ -558,7 +564,7 @@ paths:
       tags:
         - Domains
       summary: Retrieves the Swagger definition for the specified domain and version
-      operationId: getDomainDefinition
+      operationId: get_domain_definition
       produces:
         - application/json
         - application/yaml
@@ -580,7 +586,7 @@ paths:
       tags:
         - Domains
       summary: Deletes a particular version of the specified domain
-      operationId: deleteDomainVersion
+      operationId: delete_domain_version
       parameters:
         - $ref: '#/parameters/domainOwner'
         - $ref: '#/parameters/domain'
@@ -614,7 +620,7 @@ paths:
       summary: >-
         Retrieves the definition for the specified domain and version in JSON
         format
-      operationId: getDomainJsonDefinition
+      operationId: get_domain_json_definition
       parameters:
         - $ref: '#/parameters/domainOwner'
         - $ref: '#/parameters/domain'
@@ -636,7 +642,7 @@ paths:
       summary: >-
         Retrieves the definition for the specified domain and version in YAML
         format
-      operationId: getDomainYamlDefinition
+      operationId: get_domain_yaml_definition
       produces:
         - application/yaml
       parameters:
@@ -658,7 +664,7 @@ paths:
       tags:
         - Domains
       summary: Returns comments for the specified domain version
-      operationId: getDomainComments
+      operationId: get_domain_comments
       description: >
         Returns all the comments and replies added by collaborators in the
         specified domain version.
