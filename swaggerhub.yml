@@ -34,6 +34,8 @@ schemes:
   - https
 produces:
   - application/json
+externalDocs:
+  url: https://app.swaggerhub.com/apis/swagger-hub/registry-api/1.0.46
 paths:
   /specs:
     get:
